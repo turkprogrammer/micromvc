@@ -11,9 +11,20 @@
  *
  * @author Юнус
  */
-namespace application\controllers;
 
-class AccountController {
+namespace application\controllers;
+use application\core\Controller;
+
+class AccountController  extends Controller{
+
     //put your code here
-    
+    public function loginAction() {
+        echo 'Страница входа ';
+    }
+
+    public function registerAction() {
+        echo 'Страница регистрации ';
+        var_dump($this->route);
+    }
+
 }

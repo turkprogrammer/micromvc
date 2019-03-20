@@ -9,17 +9,21 @@
 namespace application\controllers;
 
 use application\core\Controller;
+
 /**
  * Description of MainController
  *
  * @author Юнус
  */
 class MainController extends Controller {
+
     //put your code here
     public function indexAction() {
-        echo "Index";
+        $this->view->render('Главная страница');
     }
-    public function contactAction(){
+
+    public function contactAction() {
         echo 'Контакты';
     }
+
 }

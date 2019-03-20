@@ -7,7 +7,7 @@
  */
 
 namespace application\core;
-
+use application\core\View;
 /**
  * Description of Controller
  *
@@ -17,10 +17,12 @@ abstract class Controller {
 
     //put your code here
     public $route;
+    public $view;
 
     public function __construct($route) {
-        echo "Base Controller Loaded <br/>";
-        $this->route = $route;
+        //echo "Base Controller Loaded <br/>";
+        $this->route = $route;       
+        $this->view = new View($route);//передаем $route в класс application\core\View
     }
 
 }

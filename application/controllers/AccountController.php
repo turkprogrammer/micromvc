@@ -19,12 +19,13 @@ class AccountController  extends Controller{
 
     //put your code here
     public function loginAction() {
-        echo 'Страница входа ';
+      $this->view->render('Страница входа');
     }
 
     public function registerAction() {
-        echo 'Страница регистрации ';
-        var_dump($this->route);
+        //echo 'Страница регистрации ';
+         $this->view->render('Страница регистрации');
+        //var_dump($this->route);
     }
 
 }

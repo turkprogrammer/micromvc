@@ -19,7 +19,11 @@ class MainController extends Controller {
 
     //put your code here
     public function indexAction() {
-        $this->view->render('Главная страница');
+        $vars =[
+            'var' =>'var',
+            'dfgd' =>'trytrytry',
+        ];
+        $this->view->render('Главная страница',$vars);
     }
 
     public function contactAction() {

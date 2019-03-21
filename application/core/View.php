@@ -20,19 +20,24 @@ class View {
     public $layout = 'default';
 
     public function __construct($route) {
-       
-     $this->route = $route;
-  $this->path = $route['controller'] . '/' . $route['action']; // формирую путь
+
+        $this->route = $route;
+        $this->path = $route['controller'] . '/' . $route['action']; // формирую путь
         //debug($this->path);
     }
 
     public function render($title, $vars = []) {
 
-        ob_start(); // загружаю в буфер шаблон дефолт
-        
-        require 'application/views/' . $this->path . '.html';
-        $content = ob_get_clean();
-        require 'application/views/layouts/' . $this->layout . '.html';
+        extract($vars); //распаковываем массив переменных из контроллеров
+        $template = 'application/views/' . $this->path . '.html';
+        if (file_exists($template)) {
+            ob_start(); // загружаю в буфер шаблон дефолт
+            require 'application/views/' . $this->path . '.html';
+            $content = ob_get_clean();
+            require 'application/views/layouts/' . $this->layout . '.html';
+        } else {
+            echo "Шаблон контроллера не обнаружен!";
+        }
     }
 
 }

@@ -7,6 +7,7 @@
  */
 
 namespace application\core;
+use application\core\View;
 
 class Router {
 
@@ -47,13 +48,16 @@ class Router {
                    $controller = new $path($this->params);
                     $controller->$action();
                 } else {
-                    echo 'Метод не найден: ' . $action;
+                    //echo 'Метод не найден: ' . $action;
+                    View::errorCode(404);
                 }
             } else {
-                echo 'Не найден контроллер: ' . $path;
+                //echo 'Не найден контроллер: ' . $path;
+                View::errorCode(404);
             }
         } else {
-            echo 'Маршрут не найден'.$_SERVER['REQUEST_URI'];
+            //echo 'Маршрут не найден'.$_SERVER['REQUEST_URI'];
+            View::errorCode(404);
            
         }
     }

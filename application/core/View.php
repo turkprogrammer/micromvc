@@ -39,5 +39,19 @@ class View {
             echo "Шаблон контроллера не обнаружен!";
         }
     }
+    
+    public function redirect($url){
+        header('location: '.$url);
+        exit();
+    }
+    
+    /*
+     * Вывод страниц ошибок
+     */
+    public static function errorCode($code){
+        http_response_code($code);
+        require 'application/views/errors/' . $code . '.html';
+        exit();
+    }
 
 }

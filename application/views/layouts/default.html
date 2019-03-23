@@ -13,16 +13,21 @@
         <title><?=$title?></title>
     </head>
     <body>
+        <div class="jumbotron text-center" style="margin-bottom:0">
+            <h1><?= $var ?></h1>
+
+        </div>
+
         <!-- As a heading -->
-        <nav class="navbar navbar-light bg-light">
-            <span class="navbar-brand mb-0 h1">MVC PHP FRAMEWORK</span>
+        <nav class="navbar sticky-top navbar-light bg-light">
+            <a class="navbar-brand" href="#">Sticky top</a>
         </nav>
-        
+
         <div class="container">
-		<br/>
+            <br/>
             <!-- Content here -->
             <div class="row">
-			
+
                 <div class="col-12"><?=$content?></div>
 
             </div>
@@ -31,7 +36,7 @@
 
         <footer class="footer">
             <div class="container">
-                <span class="text-muted">MVC PHP FRAMEWORK</span>
+                <span class="text-muted"><?= $var ?></span>
             </div>
         </footer>
         <!-- Optional JavaScript -->

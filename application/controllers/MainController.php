@@ -16,14 +16,17 @@ use application\core\Controller;
  * @author Юнус
  */
 class MainController extends Controller {
-
+    
+ 
     //put your code here
     public function indexAction() {
-        $vars =[
-            'var' =>'var',
+        $data =[
+           
             'dfgd' =>'trytrytry',
+            'var'=>'MVC PHP FRAMEWORK',
+            
         ];
-        $this->view->render('Главная страница',$vars);
+        $this->view->render('Главная страница',$data);
     }
 
     public function contactAction() {

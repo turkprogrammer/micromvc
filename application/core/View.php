@@ -26,9 +26,9 @@ class View {
         //debug($this->path);
     }
 
-    public function render($title, $vars = []) {
+    public function render($title, $data = []) {
 
-        extract($vars); //распаковываем массив переменных из контроллеров
+        extract($data); //распаковываем массив переменных из контроллеров
         $template = 'application/views/' . $this->path . '.html';
         if (file_exists($template)) {
             ob_start(); // загружаю в буфер шаблон дефолт

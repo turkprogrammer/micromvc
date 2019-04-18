@@ -34,7 +34,10 @@ class MainController extends Controller {
     }
 
     public function contactAction() {
-       $this->view->render('Контакты');
+          $data = [
+            'header'=>'Страница контактов',
+        ];
+       $this->view->render('Контакты',$data);
     }
 
 }

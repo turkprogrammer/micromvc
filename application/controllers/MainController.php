@@ -34,7 +34,7 @@ class MainController extends Controller {
     }
 
     public function contactAction() {
-       // echo 'Контакты';
+       $this->view->render('Контакты');
     }
 
 }

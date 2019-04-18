@@ -12,7 +12,7 @@ return [
         'action' => 'index',
     ],
     
-     'maincontact' => [
+     'contact' => [
         'controller' => 'main',
         'action' => 'contact',
     ],

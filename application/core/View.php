@@ -50,7 +50,10 @@ class View {
      */
     public static function errorCode($code){
         http_response_code($code);
-        require 'application/views/errors/' . $code . '.html';
+        $path = require 'application/views/errors/' . $code . '.html';
+        if(file_exists($path)){
+            require $path;
+        }
         exit();
     }
 

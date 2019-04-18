@@ -24,5 +24,6 @@ abstract class Controller {
         $this->route = $route;       
         $this->view = new View($route);//передаем $route в класс application\core\View
     }
+	
 
 }

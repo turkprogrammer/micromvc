@@ -29,12 +29,15 @@ class Db {
             echo $e->getMessage();
         }
 
+
         //debug($config);
     }
 
     public function query($sql, $params = []) {
         $stmnt = $this->db->prepare($sql, $params);
         if (!empty($params)) {
+
+
             foreach ($params as $key => $value) {
                 $stmnt->bindValue(':' . $key, $value);
             }
@@ -42,12 +45,17 @@ class Db {
             return $stmnt;
         }
 
-        //debug($result);
+        // debug($stmnt);
     }
 
     public function row($sql, $params = []) {
         $result = $this->query($sql, $params);
-        return $result->fetchAll(PDO::FETCH_ASSOC);
+        if ($result) {
+            return $result->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            throw new Exception('Division by zero.');
+            //die();
+        }
     }
 
     public function column($sql, $params = []) {

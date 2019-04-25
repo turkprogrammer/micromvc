@@ -23,6 +23,17 @@ abstract class Controller {
         //echo "Base Controller Loaded <br/>";
         $this->route = $route;       
         $this->view = new View($route);//передаем $route в класс application\core\View
+        $this->model = $this->loadModel($route['controller']);
+    }
+    
+    public function loadModel($name){
+
+        $path = 'application\models\\'.ucfirst($name); //loadmodel uppercase
+        //debug(534);
+        if(class_exists($path)){
+            return new $path;
+        }
+      // debug($path);
     }
 	
 

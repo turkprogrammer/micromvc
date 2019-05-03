@@ -3,22 +3,22 @@
 
 
 <table class="table table-striped table-dark">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">City</th>
-      <th scope="col">phone</th>
-      <th scope="col">Country</th>
-    </tr>
-  </thead>
-  <?php foreach($city as $c):?>
-  <tbody>
-    <tr>
-      <th scope="row"><?php echo $c['officeCode'] ;?></th>
-      <td><?php echo $c['city'] ;?></td>
-      <td><?php echo $c['phone'] ;?></td>
-      <td><?php echo $c['country'] ;?></td>
-    </tr>   
-  </tbody>
-  <?php endforeach ;?>
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">City</th>
+            <th scope="col">phone</th>
+            <th scope="col">Country</th>
+        </tr>
+    </thead>
+    <?php foreach($city as $c):?>
+    <tbody>
+        <tr>
+            <th scope="row"><?php echo $c['officeCode'] ;?></th>
+            <td><?php echo $c['city'] ;?></td>
+            <td><?php echo $c['phone'] ;?></td>
+            <td><?php echo $c['country'] ;?></td>
+        </tr>   
+    </tbody>
+    <?php endforeach ;?>
 </table>

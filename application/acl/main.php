@@ -2,14 +2,13 @@
 
 return [
 	'all' => [
-		//
+		'index',
 	],
 	'authorize' => [
 		//
 	],
 	'guest' => [
-		'register',
-		'login',
+		//
 	],
 	'admin' => [
 		//

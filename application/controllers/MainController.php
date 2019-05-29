@@ -10,6 +10,8 @@ namespace application\controllers;
 
 use application\core\Controller;
 
+
+
 /**
  * Description of MainController
  *
@@ -19,12 +21,11 @@ class MainController extends Controller {
 
     //put your code here
     public function indexAction() {
-      
-        $city = $this->model->getCity();
-        //debug($city);
+   //$city = \application\models\Main::getCity();
+
         $data = [
             'header' => 'test MVC app',
-            'city' => $city,
+          //'city' => $city,
         ];
 
         $this->view->render('Microframework', $data);

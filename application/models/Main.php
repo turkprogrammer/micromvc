@@ -13,16 +13,18 @@
  */
 
 namespace application\models;
-
 use application\core\Model;
+use R;
 
 class Main extends Model {
 
-    public function getCity() {
-        $params = ['phone' => '+44 20 7877 2041',
-        ];
-        $result = $this->db->row('SELECT city, phone, country, officeCode From offices', $params);
-
+    /**
+     * 
+     * @return type
+     * Вернёт массив данных (все записи/несколько по условию) из указанной таблицы
+     */
+    public static function getCity() {
+        $result = R::getAll('SELECT category_id, name FROM category');
         return $result;
     }
 

@@ -8,6 +8,9 @@
 
 require 'application/lib/Dev.php';
 require 'application/lib/Timer.php';
+require 'application/lib/Red.php';
+
+
 
 use application\core\Router;
 Timer::start();

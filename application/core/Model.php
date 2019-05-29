@@ -1,14 +1,12 @@
 <?php
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * RedBeanPHP
  */
 
 namespace application\core;
+use R; //RedBeanPHP
 
-use application\lib\Db;
 
 /**
  * Description of Model
@@ -21,7 +19,15 @@ abstract class Model {
     public $db;
 
     public function __construct() {
-        $this->db = new Db;
+        //$this->db = new Db;
+          $config = require 'application/config/db.php';
+        R::setup('mysql:host=' . $config['host'] . ';dbname=' . $config['name'] . ';charset=utf8', $config['user'], $config['password']);
+
+// Проверка подключения к БД
+        if (!R::testConnection()) {
+            die('No DB connection!!!!');
+        }
+        
     }
 
 }

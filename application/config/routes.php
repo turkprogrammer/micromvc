@@ -16,6 +16,10 @@ return [
         'controller' => 'main',
         'action' => 'contact',
     ],
+	 'about' => [
+        'controller' => 'main',
+        'action' => 'about',
+    ],
     
     'account/login' => [
         'controller' => 'account',

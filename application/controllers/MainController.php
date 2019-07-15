@@ -24,8 +24,7 @@ class MainController extends Controller {
    //$city = \application\models\Main::getCity();
 
         $data = [
-            'header' => 'test MVC app',
-          //'city' => $city,
+            'header' => 'test MVC app',        
         ];
 
         $this->view->render('Microframework', $data);
@@ -37,6 +36,14 @@ class MainController extends Controller {
         ];
 
         $this->view->render('Контакты', $data);
+    }
+	
+	  public function aboutAction() {
+        $data = [
+            'header' => 'О проекте',
+        ];
+
+        $this->view->render('О проекте', $data);
     }
 
 }

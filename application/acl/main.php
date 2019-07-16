@@ -3,7 +3,7 @@
 return [
 	'all' => [
 		'index',
-                'contact', 'about',
+                'contact', 'about', 'examples',
 	],
 	'authorize' => [
 		//

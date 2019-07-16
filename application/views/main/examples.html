@@ -1,0 +1,41 @@
+<h2>Результаты вывода из модели:</h2>
+
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>jobTitle</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+ 
+  <tbody>
+       <?php foreach ($employees as $employee): ?>
+    <tr>
+      <th scope="row"><?php echo $employee['employeeNumber']; ?></th>
+      <td><?php echo $employee['firstName']; ?></td>
+      <td><?php echo $employee['jobTitle']; ?></td>
+      <td><?php echo $employee['email']; ?></td>
+    </tr>
+     <?php endforeach; ?>
+  </tbody>
+ 
+</table>
+
+<h3>Релизация Модели:</h3>
+
+<code>public static function getEmployees() {
+        $employees = R::getAll('SELECT * FROM employees ORDER BY employeeNumber DESC LIMIT 5 ');     
+        return $employees;//Вернёт массив данных (все записи/несколько по условию) из указанной таблицы
+    }
+</code>
+<hr/>
+<h3>Релизация Контроллера:</h3>
+<code>$employees = $this->model->getEmployees();
+        $data = [
+            'employees' => $employees,
+        ];
+
+        $this->view->render('Примеры работы с Моделью', $data);//Получаем данные из модели и передаем ее в Вид</code>
+

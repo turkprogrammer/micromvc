@@ -11,25 +11,24 @@ return [
         'controller' => 'main',
         'action' => 'index',
     ],
-    
-     'contact' => [
+    'contact' => [
         'controller' => 'main',
         'action' => 'contact',
     ],
-	 'about' => [
+    'about' => [
         'controller' => 'main',
         'action' => 'about',
     ],
-    
+    'examples' => [
+        'controller' => 'main',
+        'action' => 'examples',
+    ],
     'account/login' => [
         'controller' => 'account',
         'action' => 'login',
     ],
-        
     'account/register' => [
         'controller' => 'account',
         'action' => 'register'
     ],
-    
-  
 ];

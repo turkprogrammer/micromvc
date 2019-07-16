@@ -13,6 +13,7 @@
  */
 
 namespace application\models;
+
 use application\core\Model;
 use R;
 
@@ -23,9 +24,9 @@ class Main extends Model {
      * @return type
      * Вернёт массив данных (все записи/несколько по условию) из указанной таблицы
      */
-    public static function getCity() {
-        $result = R::getAll('SELECT category_id, name FROM category');
-        return $result;
+    public static function getEmployees() {
+        $employees = R::getAll('SELECT * FROM employees ORDER BY employeeNumber DESC LIMIT 5 ');     
+        return $employees;
     }
 
 }

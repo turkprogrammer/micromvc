@@ -9,8 +9,7 @@
 namespace application\controllers;
 
 use application\core\Controller;
-
-
+use application\models\Main;
 
 /**
  * Description of MainController
@@ -21,10 +20,10 @@ class MainController extends Controller {
 
     //put your code here
     public function indexAction() {
-   //$city = \application\models\Main::getCity();
+        //$city = \application\models\Main::getCity();
 
         $data = [
-            'header' => 'test MVC app',        
+            'header' => 'test MVC app',
         ];
 
         $this->view->render('Microframework', $data);
@@ -37,13 +36,23 @@ class MainController extends Controller {
 
         $this->view->render('Контакты', $data);
     }
-	
-	  public function aboutAction() {
+
+    public function aboutAction() {
         $data = [
             'header' => 'О проекте',
         ];
 
         $this->view->render('О проекте', $data);
+    }
+
+    public function examplesAction() {
+
+        $employees = $this->model->getEmployees();
+        $data = [
+            'employees' => $employees,
+        ];
+
+        $this->view->render('Примеры работы с Моделью', $data);
     }
 
 }
